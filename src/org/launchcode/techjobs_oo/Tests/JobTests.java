@@ -21,7 +21,7 @@ public class JobTests {
         Job fakeJob = new Job();
        Job fake2Job = new Job();
        assertTrue(fakeJob.getId() == 1 && fake2Job.getId() == 2);
-git    }
+    }
     @Test
     public void testJobConstructorSetsAllFields(){
         Job fake3Job = new Job("Product tester",
@@ -51,11 +51,11 @@ git    }
     @Test
     public void testForNull2(){
         Job fakeJob;
-        fakeJob = new Job("bjc",
-                new Employer("value"),
+        fakeJob = new Job("",
+                new Employer(),
                 new Location(),
-                new PositionType("Quality Control"),
-                new CoreCompetency("Persistence"));
+                new PositionType(""),
+                new CoreCompetency(""));
         System.out.println(fakeJob);
     }
 
@@ -64,24 +64,5 @@ git    }
        Job fakeJob = new Job();
         System.out.println(new Job());
     }
-//
-//    @Test
-//    public void testIncludesAllFields(){
-//        Job.includes("\"Job{\" +\n" +
-//                "                \"id=\" + id " +
-//                "                \" name='\" + name + '\\'' "+
-//                "                \", employer=\" + employer +\n" +
-//                "                \", location=\" + location +\n" +
-//                "                \", positionType=\" + positionType +\n" +
-//                "                \", coreCompetency=\" + coreCompetency +\n" +
-//                "                '}'");
-//    }
-//    @Test
-//    public void jobHasNoData(){
-//    Job noData = new Job("BJC", new Employer("Barnes"), new Location(), new PositionType("Data analyst"), new CoreCompetency("Java"));
-//    ;
-//        System.out.println(noData);
-//
-//    }
 
 }

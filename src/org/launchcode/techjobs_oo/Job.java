@@ -36,55 +36,34 @@ public class Job {
     public String toString() {
         String errorMessage;
         errorMessage = "Oops no Data Available!";
-        if (this.employer.getValue() == null){
-            employer.setValue("Oops No data Available!");
-            return employer.getValue();
-        }
         if (this.name.equals("")) {
-            return "Job{" +
-                    "id=" + id + ", " +
-                    "\n" + "name='" + "Oops Unavailable" + ",  " +
-                    "\n" + "employer=" + employer + ",  " +
-                    "\n" + "location=" + location + ",  " +
-                    "\n" + "positionType=" + positionType + ",  " +
-                    "\n" + "coreCompetency=" + coreCompetency +
-                    '}';
+            this.name = errorMessage;
         }
-
+        if (this.employer.getValue() == ""){
+            employer.setValue("Oops No data Available!");
+        }
         if (this.location.getValue() == null) {
-            return "Job{" +
-                    "id=" + id + ", " +
-                    "\n" + "name='" + name + ",  " +
-                    "\n" + "employer=" + employer + ",  " +
-                    "\n" + "location=" + "Oops No Data Available!" + ",  " +
-                    "\n" + "positionType=" + positionType + ",  " +
-                    "\n" + "coreCompetency=" + coreCompetency +
-                    '}';
-        }if (this.positionType == null) {
-            return "Job{" +
-                    "id=" + id + ", " +
-                    "\n" + "name='" + name + ",  " +
-                    "\n" + "employer=" + employer + ",  " +
-                    "\n" + "location=" + location + ",  " +
-                    "\n" + "positionType=" + "Oops No Data Available!" + ",  " +
-                    "\n" + "coreCompetency=" + coreCompetency +
-                    '}';
-        }  if (this.coreCompetency.getValue() == " ") {
-            return "Job{" +
-                    "id=" + id + ", " +
-                    "\n" + "name='" + name + ",  " +
-                    "\n" + "employer=" + employer + ",  " +
-                    "\n" + "location=" + location + ",  " +
-                    "\n" + "positionType=" + positionType + ",  " +
-                    "\n" + "coreCompetency=" + "Oops No Data Available!" +
-                    '}';
-        } else {
-            return "id=" + id +
-                    "\n" + "name= " + name  +
-                    "\n" + "employer= " + employer +
-                    "\n" + "location= " + location  +
-                    "\n" + "positionType= " + positionType  +
-                    "\n" + "coreCompetency= " + coreCompetency;
+            location.setValue("Oops, No Data Available!");
+        }
+        if (this.positionType.getValue() == "") {
+            positionType.setValue("Oops, No Data Available!");
+        }
+        if (this.coreCompetency.getValue() == "") {
+            coreCompetency.setValue("Oops Data Not available!");
+            return "ID: " + id +
+                    "\n" + "Name=: " + name +
+                    "\n" + "Employer: " + employer +
+                    "\n" + "Location: " + location +
+                    "\n" + "PositionType: " + positionType +
+                    "\n" + "CoreCompetency: " + coreCompetency.getValue();
+        }
+        else {
+            return "ID=" + id +
+                    "\n" + "Name= " + name  +
+                    "\n" + "Employer= " + employer +
+                    "\n" + "Location= " + location  +
+                    "\n" + "PositionType= " + positionType  +
+                    "\n" + "CoreCompetency= " + coreCompetency;
         }
     }
 // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
